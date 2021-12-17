@@ -24,11 +24,11 @@ namespace Low_Level_Objects_Library {
         // IComparable allows Card objects to be sorted easily.
         // While the precise details of IEquatable and IComparable are unimportant for this assignment,
         // they are needed so that the Hand class's Sort and Contains methods work correctly.
-    
+
         private Suit suit;
         private FaceValue faceValue;
 
-       // Default constructor: Card is "blank" 
+        // Default constructor: Card is "blank" 
         public Card() {
         }
 
@@ -49,7 +49,7 @@ namespace Low_Level_Objects_Library {
             return faceValue;
         }
 
-       
+
 
         // Needed so that the Hand class's Contains method works correctly.
         //

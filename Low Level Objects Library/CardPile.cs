@@ -116,9 +116,18 @@ namespace Low_Level_Objects_Library {
 
             for (int i = 0; i < numCardsToDeal; i++)
                 cards.Add(DealOneCard());
-                       
+
             return cards;
         } //end DealCards
+
+        /// <summary>
+        /// Removes the last card in the pile.
+        ///
+        /// If pile is empty an IndexOutOfRangeException will occur
+        /// </summary>
+        public void RemoveLastCard() {
+            pile.RemoveAt(pile.Count - 1);
+        }
 
     }//end class CardPile
 }//end namespace

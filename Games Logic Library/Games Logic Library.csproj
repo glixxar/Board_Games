@@ -1,10 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{86116FEC-5BD6-45DC-B677-107FD69E8712}</ProjectGuid>
+    <ProjectGuid>{4F64860D-AC99-4ECA-BEBA-4C0D5E887EC8}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Games_Logic_Library</RootNamespace>
@@ -45,18 +45,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Crazy Eights Game.cs" />
+    <Compile Include="Pig_Double_Die_Game.cs" />
+    <Compile Include="Pig_Single_Die_Game.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Snake Eyes Game.cs" />
-    <Compile Include="Twenty One Game.cs" />
-    <Compile Include="Two Up Game.cs" />
+    <Compile Include="Solitaire_Game.cs" />
+    <Compile Include="Twenty_One_Game.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
-       Other similar extension points exist, see Microsoft.Common.targets.
-  <Target Name="BeforeBuild">
-  </Target>
-  <Target Name="AfterBuild">
-  </Target>
-  -->
 </Project>

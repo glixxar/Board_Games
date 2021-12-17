@@ -1,13 +1,11 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Low_Level_Objects_Library {
     public class Hand : IEnumerable {
         private List<Card> hand = new List<Card>();
+
         public Hand() {
         }
 
@@ -17,7 +15,7 @@ namespace Low_Level_Objects_Library {
         /// <param name="cards">Cards</param>
         public Hand(List<Card> cards) {
             foreach (Card card in cards) {
-                hand.Add( card );
+                hand.Add(card);
             }
         }
 
@@ -31,10 +29,18 @@ namespace Low_Level_Objects_Library {
 
         /// <summary>
         /// returns the card at specified position but does not remove that card from the hand.
+        /// Also takes into accound indexes start from 0 while count starts from 1
+        /// Subtracts difference in order to ensure errors do not occur
         /// </summary>
         /// <param name="index">Position of the card</param>
         /// <returns>Returns the card at index position</returns>
         public Card GetCard(int index) {
+            if(index < 0) {
+                index += 1;
+            }
+            if (hand.Count == index) {
+                index = hand.Count - 1;
+            }
             return hand[index];
         }
 
@@ -43,7 +49,7 @@ namespace Low_Level_Objects_Library {
         /// </summary>
         /// <param name="card">Card</param>
         public void Add(Card card) {
-            hand.Add( card );
+            hand.Add(card);
         }
 
         /// <summary>
@@ -52,7 +58,11 @@ namespace Low_Level_Objects_Library {
         /// <param name="card">Card</param>
         /// <returns>true if hand contain the specified card</returns>
         public bool Contains(Card card) {
-            return hand.Equals(card);
+            var  result = hand.Find(x => x == card);
+            if(result != null) {
+                return true;
+            }
+            return false;
         }
 
         /// <summary>
@@ -70,7 +80,7 @@ namespace Low_Level_Objects_Library {
         /// </summary>
         /// <param name="index">Position of that paper </param>
         public void RemoveAt(int index) {
-            hand.RemoveAt( index );
+            hand.RemoveAt(index);
         }
 
         /// <summary>
@@ -80,8 +90,8 @@ namespace Low_Level_Objects_Library {
             hand.Sort();
         }
 
-        public IEnumerator GetEnumerator () {
+        public IEnumerator GetEnumerator() {
             return hand.GetEnumerator();
         }
-    }   
+    }
 }
